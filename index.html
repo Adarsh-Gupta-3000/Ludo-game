@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>LUDO</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="head">LUDO GAME</h1>
+            <div class="p">
+                <p>Player1</p>
+                <img src="dice1.png" id="p1" alt="dice">
+            </div>
+            <div class="p">
+                <p>Player2</p>
+                <img src="dice4.png" id="p2" alt="dice">
+            </div>
+
+            <div><button onclick="letsplay()">PLAY ME</button></div>
+        </div>
+        
+    </div>
+
+    <script>
+        letsplay= () => {
+
+        const rand1=Math.floor(Math.random()*6)+1;
+        const play1="dice"+rand1+".png";
+        document.getElementById('p1').setAttribute('src',play1);
+
+        const rand2=Math.floor(Math.random()*6)+1;
+        const play2="dice"+rand2+".png";
+        document.getElementById('p2').setAttribute('src',play2);
+
+        if(rand1>rand2){
+            document.querySelector('h1').innerHTML="PLAYER1 WON!!";
+        }
+        else if(rand1<rand2){
+            document.querySelector('h1').innerHTML="PLAYER2 WON!!";
+        }
+        else{
+            document.querySelector('h1').innerHTML="DRAW :)";
+        }
+        }
+    </script>
+
+</body>
+
+</html>
